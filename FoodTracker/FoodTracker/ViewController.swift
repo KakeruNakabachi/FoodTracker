@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
