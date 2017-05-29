@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mgs-jg-7a2">
-                                <rect key="frame" x="16" y="40" width="343" height="424.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mgs-jg-7a2">
+                                <rect key="frame" x="16" y="40" width="343" height="543"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-oL-9MD">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -45,12 +45,19 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ybd-Ua-vik"/>
                                         </connections>
                                     </button>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="CsN-8j-uBZ">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="CsN-8j-uBZ">
                                         <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CsN-8j-uBZ" secondAttribute="height" multiplier="1:1" id="oeq-Ze-DzD"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="WEy-s6-CeS" appends="YES" id="wds-R3-PFj"/>
+                                        </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WwM-bm-sgq">
+                                        <rect key="frame" x="0.0" y="432.5" width="200" height="110"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Z5A-Ej-4iF" secondAttribute="trailing" id="3Mc-HJ-Uw8"/>
@@ -67,11 +74,20 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="fnS-oL-9MD" id="Fuo-yo-MTQ"/>
                         <outlet property="nameTextField" destination="Z5A-Ej-4iF" id="k37-NP-gVn"/>
+                        <outlet property="photoImageView" destination="CsN-8j-uBZ" id="rQE-pb-rLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WEy-s6-CeS">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="sZB-jN-0rx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="320" height="320"/>
+    </resources>
 </document>
